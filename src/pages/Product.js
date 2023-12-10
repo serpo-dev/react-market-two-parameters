@@ -86,8 +86,6 @@ function Product(props) {
         props.dispatch(updateProduct({ curSizeID: size_id }));
     }, []);
 
-    console.log(isItemAddedToCard)
-
     const handleAddtoCart = useCallback(() => {
         if (isItemAddedToCard) {
             props.dispatch(

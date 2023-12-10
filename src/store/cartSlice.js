@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import _ from "lodash";
 
 const initialState = {
-    list: [], // для легкого доступа - триплеты ID {product_id, color_id, size_id, ...}
+    list: [], // триплеты ID {product_id, color_id, size_id, ...}
     count: 0,
     totalPrice: 0,
 };
@@ -57,10 +57,6 @@ export const cartSlice = createSlice({
             state.list = _.cloneDeep(newList);
             state.count = newList.length;
             state.totalPrice = newList.reduce((acc, cur) => acc += Number(cur.price), 0);
-
-            const newColors = _.cloneDeep(state.colors);
-            newColors[color_id] = { ...newColors[color_id], [product_id]: undefined };
-            state.colors = newColors;
         },
 
         cleanCart: (state) => {
