@@ -1,10 +1,11 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useLocation } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import { getProduct, getSizes } from "../services/api";
 import productStyle from "../styles/Product.module.css";
 import { removeProduct, setAllSizes, setProduct, updateProduct } from "../store/productSlice";
-import { ColorPicker, SizePicker } from "../components/Product";
+import { ColorPicker, GoBackButton, SizePicker } from "../components/Product";
+import { addItem,  deleteItem } from "../store/cartSlice";
 
 
 // Прокси - для getSizes, чтобы не было лишних перерендеров
@@ -42,6 +43,7 @@ function Product(props) {
     const id = useMemo(() => (new URLSearchParams(search)).get("id"), [search]);
 
     const product = useSelector((state) => state.product);
+    const cartList = useSelector(state => state.cart.list);
 
     useEffect(() => {
         if (!id) {
@@ -61,7 +63,15 @@ function Product(props) {
         return () => props.dispatch(removeProduct())
     }, [id]);
 
-    function handleChangeColor(color_id) {
+    const isItemAddedToCard = useMemo(
+        () => Boolean(cartList.find(
+            e => e.product_id === product.id
+                && e.color_id === product.curColorID
+                && e.size_id === product.curSizeID)),
+        [product, cartList]
+    );
+
+    const handleChangeColor = useCallback((color_id) => {
         const sizes = product.colors.find(c => c.id === color_id).sizes;
         const size_id = sizes.find(id => id === product.curSizeID)
             ? product.curSizeID
@@ -70,11 +80,37 @@ function Product(props) {
             curColorID: color_id,
             curSizeID: size_id
         }));
-    }
+    }, [product]);
 
-    function handleChangeSize(size_id) {
+    const handleChangeSize = useCallback((size_id) => {
         props.dispatch(updateProduct({ curSizeID: size_id }));
-    }
+    }, []);
+
+    console.log(isItemAddedToCard)
+
+    const handleAddtoCart = useCallback(() => {
+        if (isItemAddedToCard) {
+            props.dispatch(
+                deleteItem({
+                    product_id: product.id,
+                    color_id: product.curColorID,
+                    size_id: product.curSizeID,
+                }));
+        } else {
+            const cv = product.colors.find(c => c.id === product.curColorID);
+            props.dispatch(
+                addItem({
+                    product_id: product.id,
+                    color_id: product.curColorID,
+                    size_id: product.curSizeID,
+                    price: cv.price,
+                    img: cv.images,
+                    product_name: product.name,
+                    color_name: cv.name,
+                    size_name: product.allSizes.find(s => s.id === product.curSizeID).label,
+                }));
+        }
+    }, [product, isItemAddedToCard]);
 
     if (props.error) return <p className={productStyle["error"]}>{props.error} </p>
 
@@ -83,9 +119,7 @@ function Product(props) {
     const colorVariant = product.colors.find(c => c.id === product.curColorID);
 
     return (<>
-        <div className={productStyle["goBack"]}>
-            <NavLink to="/">Назад</NavLink>
-        </div>
+        <GoBackButton />
 
         <div className={productStyle["product"]}>
             <div>
@@ -98,8 +132,11 @@ function Product(props) {
             <div className={productStyle["information"]}>
                 <div className={productStyle["price"]}>
                     <h3>{colorVariant.price} $</h3>
-                    <button>
-                        Add to cart
+                    <button
+                        onClick={handleAddtoCart}
+                        className={isItemAddedToCard ? productStyle["active"] : ""}
+                    >
+                        {isItemAddedToCard ? "Delete from cart" : "Add to cart"}
                     </button>
                 </div>
 

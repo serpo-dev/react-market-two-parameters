@@ -2,10 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import _ from "lodash";
 import { findColorWithSize } from "../utils/findColorWithSize";
 
-function checkIfAddedToCart(id, color, size) {
-    // const cart = 
-}
-
 
 const initialState = {
     allSizes: [],

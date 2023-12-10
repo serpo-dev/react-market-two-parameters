@@ -7,6 +7,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
 .layout {
     display: flex;
     flex-direction: column;
@@ -18,9 +24,16 @@ body {
 .layout header {
     height: 100px;
     display: flex;
+    flex-direction: row;
+    width: 600px;
     align-items: center;
-    font-size: 32px;
+    font-size: 14px;
     font-weight: 700;
+}
+
+.layout header h1 {
+    flex-grow: 1;
+    text-align: center;
 }
 
 .layout main {

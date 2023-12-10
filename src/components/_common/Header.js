@@ -1,11 +1,21 @@
-import { Fragment } from "react";
+import { NavLink } from "react-router-dom";
+import { HeaderCart } from "../Cart";
+
 
 function Header() {
-    return (<Fragment>
+    return (
         <header>
-            MARKET
+
+            <h1>
+                <NavLink to="/">
+                    МАГАЗИН ОДЕЖДЫ
+                </NavLink>
+            </h1>
+
+
+            <HeaderCart />
         </header>
-    </Fragment>)
+    )
 }
 
 export default Header;
