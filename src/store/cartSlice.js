@@ -51,7 +51,7 @@ export const cartSlice = createSlice({
             } = action.payload;
 
             const newList = state.list.filter(
-                e => e.product_id + e.color_id + e.size_id !== product_id + color_id + size_id
+                e => e.product_id + "_" + e.color_id + "_" + e.size_id !== product_id + "_" + color_id + "_" + size_id
             );
 
             state.list = _.cloneDeep(newList);
