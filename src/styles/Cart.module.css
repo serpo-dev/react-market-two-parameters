@@ -33,6 +33,33 @@
     align-items: center;
 }
 
+.cart .information {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 500px;
+}
+
+.cart .information .totals {
+   flex-grow: 1;
+}
+
+button.deleteAll {
+    background-color: white;
+    color: red;
+    border: 2px solid red;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button.deleteAll:hover {
+    filter: brightness(0.9);
+}
+
 .cartItem {
     width: 400px;
     display: flex;

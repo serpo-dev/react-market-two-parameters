@@ -70,7 +70,7 @@ export const cartSlice = createSlice({
 export const {
     addItem,
     deleteItem,
-    leanCart
+    cleanCart
 } = cartSlice.actions;
 
 export const cartReducer = cartSlice.reducer;
