@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import cartStyle from "../styles/Cart.module.css";
 import { CartItem } from "../components/Cart";
