@@ -14,9 +14,12 @@ function Layout() {
     </>)
 }
 
+const currentUrl = window.location.href;
+const basename = currentUrl.includes("github.io") ? "/react-shop-cart-with-two-parameters/" : undefined;
+
 const App = () => (<>
     <Provider store={store}>
-        <BrowserRouter basename='/react-shop-cart-with-two-parameters'>
+        <BrowserRouter basename={basename}>
             <Layout />
         </BrowserRouter>
     </Provider>

@@ -2,7 +2,7 @@
     "name": "react-shop-cart-with-two-parameters",
     "version": "0.1.0",
     "private": true,
-    "homepage": "https://serpo-dev.github.io/react-shop-cart-with-two-parameters",
+    "homepage": "https://serpo-dev.github.io/react-shop-cart-with-two-parameters/",
     "dependencies": {
         "@reduxjs/toolkit": "^2.0.1",
         "lodash": "^4.17.21",
