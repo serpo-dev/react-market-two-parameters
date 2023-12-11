@@ -16,7 +16,7 @@ function Layout() {
 
 const App = () => (<>
     <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter basename='/react-shop-cart-with-two-parameters'>
             <Layout />
         </BrowserRouter>
     </Provider>
