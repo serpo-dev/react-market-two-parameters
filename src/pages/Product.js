@@ -4,8 +4,8 @@ import { useLocation } from "react-router-dom"
 import { getProduct, getSizes } from "../services/api";
 import productStyle from "../styles/Product.module.css";
 import { removeProduct, setAllSizes, setProduct, updateProduct } from "../store/productSlice";
-import { ColorPicker, GoBackButton, SizePicker } from "../components/Product";
-import { addItem,  deleteItem } from "../store/cartSlice";
+import { ColorPicker, Gallery, GoBackButton, SizePicker } from "../components/Product";
+import { addItem, deleteItem } from "../store/cartSlice";
 
 
 // Прокси - для getSizes, чтобы не было лишних перерендеров
@@ -120,13 +120,11 @@ function Product(props) {
         <GoBackButton />
 
         <div className={productStyle["product"]}>
-            <div>
-
-                <img
-                    src={colorVariant.images[0]}
-                    alt={`${product.name}`}
-                />
-            </div>
+            <Gallery
+                images={colorVariant.images}
+                alt={product.name}
+            />
+            
             <div className={productStyle["information"]}>
                 <div className={productStyle["price"]}>
                     <h3>{colorVariant.price} $</h3>

@@ -39,9 +39,49 @@
     gap: 30px;
 }
 
-.product img {
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery .full img {
     max-width: 300px;
     max-height: 500px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.navigation img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.gallery .preview {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery .preview img:hover {
+    filter: brightness(0.9);
+    cursor: pointer;
+}
+
+.gallery .preview img {
+    max-width: 60px;
+    max-height: 100px;
 }
 
 .price {
