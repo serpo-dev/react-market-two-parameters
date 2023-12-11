@@ -8,13 +8,13 @@
 ### Скриншоты 🖥️
 
 <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
-    <img src="example/preview/1.jpg" alt="1" height="360" style="margin: 5px;">
-    <img src="example/preview/2.jpg" alt="2" height="120" style="margin: 5px;">
-    <img src="example/preview/3.jpg" alt="3" height="120" style="margin: 5px;">
-    <img src="example/preview/4.jpg" alt="4" height="120" style="margin: 5px;">
-    <img src="example/preview/5.jpg" alt="5" height="120" style="margin: 5px;">
-    <img src="example/preview/6.jpg" alt="6" height="120" style="margin: 5px;">
-    <img src="example/preview/7.jpg" alt="7" height="120" style="margin: 5px;">
+    <img src="demo/preview/1.jpg" alt="1" height="360" style="margin: 5px;">
+    <img src="demo/preview/2.jpg" alt="2" height="120" style="margin: 5px;">
+    <img src="demo/preview/3.jpg" alt="3" height="120" style="margin: 5px;">
+    <img src="demo/preview/4.jpg" alt="4" height="120" style="margin: 5px;">
+    <img src="demo/preview/5.jpg" alt="5" height="120" style="margin: 5px;">
+    <img src="demo/preview/6.jpg" alt="6" height="120" style="margin: 5px;">
+    <img src="demo/preview/7.jpg" alt="7" height="120" style="margin: 5px;">
 </div>
 
 # Запуск
