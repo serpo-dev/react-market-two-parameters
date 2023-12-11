@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/react-shop-cart-with-two-parameters/static/css/main.1cd3556b.css",
-    "main.js": "/react-shop-cart-with-two-parameters/static/js/main.af78b57e.js",
+    "main.js": "/react-shop-cart-with-two-parameters/static/js/main.536d933e.js",
     "static/media/cart.svg": "/react-shop-cart-with-two-parameters/static/media/cart.01f958817a12a5c9d731c16275342fec.svg",
     "static/media/trash.svg": "/react-shop-cart-with-two-parameters/static/media/trash.0a3d8eec14fa9a2ae65043bcc3c6ef66.svg",
     "static/media/right.svg": "/react-shop-cart-with-two-parameters/static/media/right.3297b9106765ab74a193259d1d20a578.svg",
     "static/media/left.svg": "/react-shop-cart-with-two-parameters/static/media/left.887adaa2537f1b9203979b3f1d80354c.svg",
     "index.html": "/react-shop-cart-with-two-parameters/index.html",
     "main.1cd3556b.css.map": "/react-shop-cart-with-two-parameters/static/css/main.1cd3556b.css.map",
-    "main.af78b57e.js.map": "/react-shop-cart-with-two-parameters/static/js/main.af78b57e.js.map"
+    "main.536d933e.js.map": "/react-shop-cart-with-two-parameters/static/js/main.536d933e.js.map"
   },
   "entrypoints": [
     "static/css/main.1cd3556b.css",
-    "static/js/main.af78b57e.js"
+    "static/js/main.536d933e.js"
   ]
 }
